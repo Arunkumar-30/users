@@ -22,12 +22,12 @@ export default function Signup() {
       const data = await res.json();
 
       if (res.ok) {
-        setMessage("✅ Signup successful!");
+        setMessage("Signup successful!");
       } else {
-        setMessage(data.message || "❌ Error during signup");
+        setMessage(data.message || "Error during signup");
       }
     } catch (err) {
-      setMessage("⚠️ Network error");
+      setMessage(" Network error");
     }
   };
 

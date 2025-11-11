@@ -21,12 +21,12 @@ export default function Signin() {
 
       if (res.ok) {
         localStorage.setItem("token", data.token);
-        setMessage("✅ Signin successful!");
+        setMessage("Signin successful!");
       } else {
-        setMessage(data.message || "❌ Invalid credentials");
+        setMessage(data.message || "Invalid credentials");
       }
     } catch (err) {
-      setMessage("⚠️ Network error");
+      setMessage("Network error");
     }
   };
 

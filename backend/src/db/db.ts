@@ -17,11 +17,11 @@ export class DatabaseService implements OnModuleInit {
     while (attempts < maxAttempts) {
       try {
         await this.pool.query('SELECT 1');
-        console.log('✅ Connected to Postgres');
+        console.log(' Connected to Postgres');
         break;
       } catch (err) {
         attempts++;
-        console.log(`⏳ Postgres not ready (attempt ${attempts}/${maxAttempts}) — retrying in 2s`);
+        console.log(` Postgres not ready (attempt ${attempts}/${maxAttempts}) — retrying in 2s`);
         await new Promise(r => setTimeout(r, 2000));
       }
     }
@@ -38,9 +38,9 @@ export class DatabaseService implements OnModuleInit {
           created_at TIMESTAMP WITH TIME ZONE DEFAULT now()
         );
       `);
-      console.log('✅ user_tab verified/created');
+      console.log('user_tab verified/created');
     } catch (err) {
-      console.error('❌ Error ensuring user_tab:', err);
+      console.error('Error ensuring user_tab:', err);
     }
   }
 
